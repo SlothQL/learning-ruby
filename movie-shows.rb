@@ -71,7 +71,7 @@ if result == "movies" || result == "movie"
     end
 
     else
-    puts "Error!"
+    puts "Error. Invalid command!"
 
   end
 
