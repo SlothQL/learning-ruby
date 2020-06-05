@@ -1,11 +1,11 @@
-Learning Ruby with Codecademy
+##Learning Ruby with Codecademy
 
 I am currently learning Ruby using Codecademy and this exercise came up. This program gives the user the ability to choose whether she/he wants to add, display, delete or update elements of a list of movies.
 
 The first version is the file "movie-list.rb".
 I followed the instructions but decided to make a few changes. The biggest issue that I saw with the original code was the input and how it would be stored within the hash.
 
-The hash used symbols and stored date like this "StarWars:" but as a user if I wanted to add a new movie to my list I would type "Star Wars" and not "StarWars" and then it would be added to my hash looking like this "Star Wars":
+The hash used symbols and stored date like this *StarWars:* but as a user if I wanted to add a new movie to my list I would type *Star Wars* and not *StarWars* and then it would be added to my hash looking like this *"Star Wars":*.
 
 I didn't like to incosistency and decided to add code to transform the input into snake cases when adding it to the hash and  code to transform it back into a string when using the title in an output.
 
