@@ -11,6 +11,6 @@ I didn't like to incosistency and decided to add code to transform the input int
 
 The second version of this exercise is the file "movie-shows.rb". I used the code I had written before but added TV Shows to the program. Now the user can choose between movies and tv shows. I copied the same code I had written for the movies, changed the name of the hash and added a while loop to make sure that the user doesn't have to refresh the site when she/he chooses neither movies or tv shows for example through a typing mistake. The only way of breaking out of the while loop is through a valid input.
 
-The code worked fine, but one of the key principles in programming is DRY - Don't repeat yourself. And this version had nealry 40 lines of the same code. 
+The code worked fine, but one of the key principles in programming is DRY - Don't repeat yourself. And this version had nearly 40 lines of the same code. 
 
 The third version is called "movies-shows-def.rb". I created one function and placed the functionality of choosing the action add, update, delete and display in it. Once the user has given the input movies or tv shows, the program invokes the function either with the movies hash or the tv show hash as an argument. 
