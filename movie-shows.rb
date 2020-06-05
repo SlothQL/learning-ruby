@@ -15,10 +15,9 @@ tv_shows = {
 flag = false
 
 while flag == false
-puts "Movies or TV Shows?"
-
-result = gets.chomp
-result.downcase!
+  puts "Movies or TV Shows?"
+  result = gets.chomp
+  result.downcase!
   if result == "movies" || result == "movie" || result == "tv shows" || result == "tv show"
     flag == true
     break
@@ -36,46 +35,46 @@ if result == "movies" || result == "movie"
 
   case choice
     when "add"
-    puts "What movie would you like to add? "
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if movies[title].nil?
-      puts "And the rating?"
-      rating = gets.chomp.to_f
-      movies[title] = rating
-      puts "#{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{rating} has been added to your list!"
+      puts "What movie would you like to add? "
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if movies[title].nil?
+        puts "And the rating?"
+        rating = gets.chomp.to_f
+        movies[title] = rating
+        puts "#{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{rating} has been added to your list!"
       else 
-      puts "This movie already exists!"
+        puts "This movie already exists!"
       end
 
     when "update"
-    puts "What movie would you like to update?"
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if movies[title].nil?
-    puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
-    else 
-    puts "What is the new rating?"
-    rating = gets.chomp.to_f
-    movies[title] = rating
-    end
+      puts "What movie would you like to update?"
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if movies[title].nil?
+        puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
+      else 
+        puts "What is the new rating?"
+      rating = gets.chomp.to_f
+      movies[title] = rating
+      end
 
     when "display"
-    movies.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
+      movies.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
 
     when "delete"
-    puts "What movie would you like to delete?"
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if movies[title].nil?
-    puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
+      puts "What movie would you like to delete?"
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if movies[title].nil?
+        puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
+      else
+        movies.delete(title)
+      end
+
     else
-      movies.delete(title)
+      puts "Error. Invalid command!"
     end
 
-    else
-    puts "Error!"
-
-  end
-
 else
+
   puts "What would you like to do? Add, update, display or delete?"
 
   choice = gets.chomp
@@ -83,39 +82,42 @@ else
 
   case choice
     when "add"
-    puts "What TV Show would you like to add? "
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if tv_shows[title].nil?
-      puts "And the rating?"
-      rating = gets.chomp.to_f
-      tv_shows[title] = rating
-      puts "#{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{rating} has been added to your list!"
+      puts "What TV Show would you like to add? "
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if tv_shows[title].nil?
+        puts "And the rating?"
+        rating = gets.chomp.to_f
+        tv_shows[title] = rating
+        puts "#{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{rating} has been added to your list!"
       else 
-      puts "This TV Show already exists!"
+        puts "This TV Show already exists!"
       end
 
     when "update"
-    puts "What TV Show would you like to update?"
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if tv_shows[title].nil?
-    puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
-    else 
-    puts "What is the new rating?"
-    rating = gets.chomp.to_f
-    tv_shows[title] = rating
-    end
+      puts "What TV Show would you like to update?"
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if tv_shows[title].nil?
+        puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
+      else 
+        puts "What is the new rating?"
+        rating = gets.chomp.to_f
+        tv_shows[title] = rating
+      end
 
     when "display"
-    tv_shows.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
+      tv_shows.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
 
     when "delete"
-    puts "What TV Show would you like to delete?"
-    title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if tv_shows[title].nil?
-    puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
-    else
-      tv_shows.delete(title)
-    end
-  end 
+      puts "What TV Show would you like to delete?"
+      title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
+      if tv_shows[title].nil?
+        puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
+      else
+         tv_shows.delete(title)
+      end
 
+    else
+      puts "Error. Invalid command!"
+    end
+    
 end
