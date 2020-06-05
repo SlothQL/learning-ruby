@@ -70,8 +70,14 @@ if result == "movies" || result == "movie"
       end
 
     else
+<<<<<<< HEAD
       puts "Error. Invalid command!"
     end
+=======
+    puts "Error. Invalid command!"
+
+  end
+>>>>>>> eba63427a84940b08831b8ebf8e1065272429db0
 
 else
 
@@ -119,5 +125,11 @@ else
     else
       puts "Error. Invalid command!"
     end
+<<<<<<< HEAD
     
 end
+=======
+  end 
+
+end
+>>>>>>> eba63427a84940b08831b8ebf8e1065272429db0
