@@ -1,4 +1,4 @@
-##Learning Ruby with Codecademy
+## Learning Ruby with Codecademy
 
 I am currently learning Ruby using Codecademy and this exercise came up. This program gives the user the ability to choose whether she/he wants to add, display, delete or update elements of a list of movies.
 
