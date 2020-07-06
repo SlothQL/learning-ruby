@@ -28,7 +28,7 @@ while flag == false
   end
 end
 
-def choose_action(arr, genre)
+def choose_action(list, genre)
 
   puts "What would you like to do? Add, update, display or delete?"
 
@@ -38,10 +38,10 @@ def choose_action(arr, genre)
   if action == "add" 
     puts "What #{genre} would you like to add? "
     title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if arr[title].nil?
+    if list[title].nil?
       puts "And the rating?"
       rating = gets.chomp.to_f
-      arr[title] = rating
+      list[title] = rating
       puts "#{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{rating} has been added to your list!"
     else 
       puts "This #{genre} already exists!"
@@ -51,26 +51,26 @@ def choose_action(arr, genre)
   if action == "update"
     puts "What #{genre} would you like to update?"
     title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if arr[title].nil?
+    if list[title].nil?
       puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
     else 
       puts "What is the new rating?"
       rating = gets.chomp.to_f
-      arr[title] = rating
+      list[title] = rating
     end
   end
 
   if action == "display"
-    arr.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
+    list.each {|k,v| puts "#{k.to_s.tr("_"," ").split.map(&:capitalize).join(' ')}: #{v}"}
   end
 
   if action == "delete"
     puts "What #{genre} would you like to delete?"
     title = gets.chomp.gsub(/\s+/, "_").downcase.to_sym
-    if arr[title].nil?
+    if list[title].nil?
       puts "Error. #{title.to_s.tr("_"," ").split.map(&:capitalize).join(' ')} cannot be found!"
     else
-      arr.delete(title)
+      list.delete(title)
     end
   end
 
